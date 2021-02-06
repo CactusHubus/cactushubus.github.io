@@ -1,0 +1,312 @@
+html {
+	background-color:	#000;
+	height:	100%;
+	width: 100%;
+}
+
+body {
+	width: 100%;
+	background-color:	#fff;
+	max-width: 716px;
+	margin:	0px	auto;
+	height:	100%;
+	color: #000;
+	padding: 0px;
+	overflow: hidden;
+}
+
+nav.main {
+	position:	relative;
+	top: 12px;
+	left: 0px;
+	background:	#fff url("images/fond_ciel.jpg") repeat-x	top	left;
+	border: 1px solid #e8e8eb;
+	height:	40px;
+	margin-bottom: 25px;
+	padding: 0px;
+	z-index: 108;
+}
+
+body.bnoir nav.main	{
+	background:	#000;
+	border: 1px solid #808080;
+}
+
+ul.nav,	ul.subnav	{
+	list-style:	none;
+	margin:	0;
+	padding: 0;
+}
+
+ul.nav {
+	display: table;
+	margin:	0	auto;
+	position: relative;
+}
+
+ul.nav > li	{
+	display: inline-block;
+	vertical-align:	top;
+	padding-top: 10px;
+	/*zoom: 1;
+  *display: inline;*/
+}
+
+ul.nav > li	>	a	{
+	background:	url("images/downArrow.png")	no-repeat	right;
+	font-size: 1em;
+}
+
+ul.nav > li > a, ul.subnav > li > a {
+	padding: 5px 15px;
+	color: #fff;
+	position: relative;
+	z-index: 107;
+}
+
+ul.nav > li > a.rub-selected {
+	text-decoration: underline;
+}
+
+ul.nav > li > a:focus {
+	z-index: 104;
+}
+
+ul.subnav {
+	position:	absolute;
+	visibility:	hidden;
+	margin: 0px 0px 0px 10px;
+}
+
+ul.subnav > li {
+	margin: 0;
+	padding: 0;
+}
+
+ul.subnav > li:last-child {
+	border-bottom: 1px solid #eee;
+}
+
+li:hover > ul.subnav, a[id^=rub]:focus + ul.subnav {
+	visibility:	visible;
+}
+
+ul.subnav > li > a {
+	display: block;
+	/*background:	#1d3a81;*/
+	position:	relative;
+	border-width: 1px 1px 0px 1px;
+	border-style:	solid;
+	border-color:	#eee;
+	padding: 3px 20px 3px 10px;
+	z-index: 109;	
+	white-space: nowrap;
+}
+
+ul.subnav > li > a.sub-selected {
+	padding-left: 25px;
+	background-image: url('/images/white-right-arrow.png');
+	background-position: left center;
+	background-repeat: no-repeat;
+}
+
+ul.subnav > li > a:hover {
+	/*background:	#2a66a1;*/
+	background:	#999;
+	transition: background, 0.1s linear 0s;
+	text-decoration: none;
+}
+
+
+#toggleMenu	{
+	display: none;
+}
+
+#rub0 {
+	display: block;
+	position: absolute;
+	top: -101em;
+	left:0;
+	right:0;
+	bottom:0;
+	z-index: 105;
+}
+
+#rub1	{color:#9F9DC5}
+#rub2	{color:#8AB2B1}
+#rub3	{color:#CFB87C}
+#rub4	{color:#E09292}
+#rub5	{color:#9DA7D1}
+#rub6	{color:#8AB2B1}
+#rub7	{color:#d69176}
+.bkgcol-1 {background-color:#9F9DC5}
+.bkgcol-2 {background-color:#5aa5a3}
+.bkgcol-3 {background-color:#c2ac74}
+.bkgcol-4 {background-color:#E09292}
+.bkgcol-5 {background-color:#9DA7D1}
+.bkgcol-6 {background-color:#7db3b2}
+.bkgcol-7 {background-color:#d68666}
+
+section	{
+	padding: 0px 19px 0px 22px;
+	overflow: auto;
+	max-width: 716px;
+	width: 100%;
+	position:	fixed;
+	top: 80px;
+	bottom:	0px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
+@media screen	and	(max-width:	615px) {
+
+	html {
+	}
+
+	body {
+		margin:	0px;
+		padding: 0px;
+		overflow-x: hidden;
+		overflow-y: auto;
+		font-size: 0.95em;
+	}	
+
+	nav.main {
+		display: block;
+		background:	#fff url("images/fond_ciel.jpg") repeat-x	top	left;
+		border: 1px solid #e8e8eb;
+	}
+
+	body.bnoir > nav.main {
+		background: none;
+		border: 0;
+	}
+
+	#rub0 {
+		display: none;
+	}
+
+	#toggleMenu {
+		display: none;
+	}
+	#toggleMenu + label {
+		background:	#ccc url('images/menu.png') no-repeat center;
+		height: 38px;
+		width: 38px;
+		display: inline-block;
+		color: #333333;
+		outline: 1px outset #999;
+		border: 0px solid #eee;
+		position: absolute;		
+		right: 1em;
+		transition: background, 0.1s linear 0s;
+	}
+	#toggleMenu:not(:checked):active + label, nav.main input[type=checkbox]:checked:active + label {
+		outline: 1px inset #999;
+		transition: background, 0.1s linear 0s;
+	}
+	#toggleMenu:checked + label, #toggleMenu.checked + label {
+		background:	#ccc url('images/menu.png') no-repeat center;
+		height: 38px;
+		width: 38px;
+		display: inline-block;
+		color: #333333;
+		outline: 1px outset #999;
+		border: 1px solid #555;
+		right: 1em;
+		position: absolute;
+		transition: background, 0.1s linear 0s;
+	}
+
+	#toggleMenu:not(:checked) ~ #nav {
+		position: fixed;
+		top: -250px;
+		left: 100%;right: 0;
+		transition: left, 0.1s linear 0s;
+		-webkit-transition: left, 0.1s linear 0s;
+	}
+
+	#toggleMenu:checked ~ #nav, #toggleMenu.checked ~ #nav  {
+		position: absolute;
+		top: 43px;
+		right: 0;
+		left: 0;
+		transition: left, 0.1s linear 0s;
+		-webkit-transition: left, 0.1s linear 0s;
+		display: block;
+	}
+
+	ul.nav > li	{
+		border-top: 1px solid #a0a0a0;
+		/*padding: 6px 5px 6px 5px;*/
+		padding: 0px 1px 0px 0px;
+		background:	#1d3a81;
+		clear: both;
+		display: block;
+		overflow: hidden;
+	}
+
+	ul.nav > li	>	a	{
+		display: block;
+		margin: 0px;
+		padding: 5px 0px 5px 10px;
+	}
+
+	ul.nav > li	>	a:target	{
+		background-image:	none;
+	}
+
+	ul.nav > li > a:target + ul.subnav {
+		display: block;
+	}
+
+	ul.nav > li > a + ul.subnav	{
+		display: none;
+	}
+
+
+	ul.subnav {
+		visibility:	visible;
+		position:	relative;
+		padding: 0px;
+		margin: 0px;
+		border-width: 1px 0px 0px 0px;
+		border-style: solid;
+		border-color: #557;
+	}
+
+	ul.subnav > li {
+		float: left;
+		width: 50%;
+		/*display: inline-block;*/
+		/*white-space: nowrap;*/
+	}
+
+	ul.subnav > li:last-child {
+		/*border-bottom: 10px;*/
+	}
+
+	ul.subnav > li > a {
+		border-width: 0px 1px 1px 0px;
+		border-style: solid;
+		border-color: #557;
+		padding: 1px 0px 1px 10px;
+		font-size: 0.9em;
+	}
+
+	ul.subnav > li, ul.subnav > li:last-child {
+		border: 0px;
+	}
+
+
+	section	{
+		padding: 0px 6px 0px 13px;
+		position:	static;
+		background:	inherit;
+		width: auto;
+	}
+
+}
